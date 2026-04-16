@@ -16,7 +16,7 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', 'SEU_PIXEL_ID');
+    fbq('init', '2806857656317405');
     fbq('track', 'PageView');
   </script>
 </head>
@@ -26,13 +26,13 @@
   <script>
     const params = new URLSearchParams(window.location.search);
 
-    const telefone = "5547999999999"; // troque pelo seu número
+    const telefone = "5547991509435"; // troque pelo seu número
 
     const origem = params.get("origem") || "direto";
     const campanha = params.get("campanha") || "sem_campanha";
     const anuncio = params.get("anuncio") || "sem_anuncio";
 
-    const msgPadrao = "[1] Olá, tenho interesse em comprar esse produto";
+    const msgPadrao = "[1] Olá, tenho interesse em comprar uma cesta";
     const msg = params.get("msg") || msgPadrao;
 
     fbq('track', 'Lead', {
