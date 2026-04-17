@@ -2,58 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aguarde, estamos redirecionando você...</title>
-
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '2806857656317405');
-    fbq('track', 'PageView');
-  </script>
-</head>
-<body>
-  <p>Redirecionando para o WhatsApp...</p>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-
-    const telefone = "5547991714130"; // troque pelo seu número
-
-    const origem = params.get("origem") || "direto";
-    const campanha = params.get("campanha") || "sem_campanha";
-    const anuncio = params.get("anuncio") || "sem_anuncio";
-
-    const msgPadrao = "[1] Olá, tenho interesse em comprar uma cesta";
-    const msg = params.get("msg") || msgPadrao;
-
-    fbq('track', 'Lead', {
-      origem: origem,
-      campanha: campanha,
-      anuncio: anuncio
-    });
-
-    setTimeout(() => {
-      const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`;
-      window.location.href = urlWhatsapp;
-    }, 800);
-  </script>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Redirecionando...</title>
 
   <!-- Meta Pixel -->
@@ -67,34 +16,49 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
+    // 🔥 COLOQUE SEU PIXEL AQUI
     fbq('init', '2806857656317405');
+
+    // VISITA NA PÁGINA
     fbq('track', 'PageView');
   </script>
 </head>
+
 <body>
   <p>Redirecionando para o WhatsApp...</p>
 
   <script>
     const params = new URLSearchParams(window.location.search);
 
-    const telefone = "5547991509435"; // troque pelo seu número
+    // 📱 SEU NÚMERO CORRETO
+    const telefone = "5547991714130";
 
     const origem = params.get("origem") || "direto";
     const campanha = params.get("campanha") || "sem_campanha";
     const anuncio = params.get("anuncio") || "sem_anuncio";
 
+    // 💬 FRASE PADRÃO (se não vier da URL)
     const msgPadrao = "[1] Olá, tenho interesse em comprar uma cesta";
+
+    // 💬 FRASE DINÂMICA
     const msg = params.get("msg") || msgPadrao;
 
-    fbq('track', 'Lead', {
-      origem: origem,
-      campanha: campanha,
-      anuncio: anuncio
-    });
+    // 🔗 LINK DO WHATSAPP
+    const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`;
 
+    // ⏳ ESPERA E DISPARA LEAD SÓ NA SAÍDA
     setTimeout(() => {
-      const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`;
+
+      // 🔥 EVENTO REAL DE LEAD
+      fbq('track', 'Lead', {
+        origem: origem,
+        campanha: campanha,
+        anuncio: anuncio
+      });
+
+      // REDIRECIONA
       window.location.href = urlWhatsapp;
+
     }, 800);
   </script>
 </body>
